@@ -1,0 +1,16 @@
+{% load thumbnail %}{% spaceless %}
+
+<img 
+    class="filer_image {{ style }} {{ classes }}"
+    alt="{% if instance.glossary.alt %}{{ instance.glossary.alt }}{% endif %}"
+    srcset="
+        {% for src in srcset %}{% thumbnail instance.image src %} {{ src.0 }}w,
+        {% endfor %}
+    "
+    {% if sizes %}sizes="{{ sizes }}"{% endif %}
+    {# src="{% thumbnail instance.image default_size %}" #}
+    {% if instance.glossary.caption %} title="{{ instance.glossary.caption }}"{% endif %}
+/>
+
+{% endspaceless %}
+
