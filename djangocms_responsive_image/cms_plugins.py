@@ -8,11 +8,13 @@ from cms.plugin_pool import plugin_pool
 
 from . import models
 from .conf import settings
+from .forms import ResponsiveImageForm
 
 class ResponsiveImagePlugin(CMSPluginBase):
     module = 'Filer'
     model = models.ImagePlugin
     name = _('Responsive Image')
+    form = ResponsiveImageForm
     TEMPLATE_NAME = 'djangocms_responsive_image/plugins/image/{0}.html'
     render_template = TEMPLATE_NAME.format('default')
 
