@@ -12,7 +12,7 @@ setup(
        'filer',
        'jsonfield',
        'appconf',
-    ]
+    ],
     keywords = ['responsive', 'image', 'django'],
     classifiers = [],
 )
