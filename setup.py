@@ -9,9 +9,9 @@ setup(
     url = 'https://github.com/febsn/djangocms-responsive-image',
     download_url = 'https://github.com/febsn/djangocms-responsive-image/tarball/0.0.1',
     install_requires = [
-       'filer',
+       'django-filer',
        'jsonfield',
-       'appconf',
+       'django-appconf',
     ],
     keywords = ['responsive', 'image', 'django'],
     classifiers = [],
