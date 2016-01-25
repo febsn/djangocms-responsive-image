@@ -1,13 +1,15 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 setup(
     name = 'djangocms_responsive_image',
-    packages = ['djangocms_responsive_image'],
-    version = '0.0.4',
+    packages = find_packages(exclude=('tests', 'tests.*')),
+    include_package_data=True,
+    license='MIT License',
+    version = '0.0.8',
     description = 'Django CMS plugin implementing html5 responsive images',
     author = 'Fabian Lehner',
     author_email = 'fl@makonis.net',
     url = 'https://github.com/febsn/djangocms-responsive-image',
-    download_url = 'https://github.com/febsn/djangocms-responsive-image/tarball/0.0.4',
+    download_url = 'https://github.com/febsn/djangocms-responsive-image/tarball/0.0.8',
     install_requires = [
        'django-filer>=1.0.4',
        'jsonfield>=1.0.3',
