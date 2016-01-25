@@ -11,7 +11,7 @@ from jsonfield.fields import JSONField
 from .conf import settings
 
 class ImagePluginBase(CMSPlugin):
-    glossary = JSONField()
+    glossary = JSONField(default={})
 
     class Meta:
         abstract = True
