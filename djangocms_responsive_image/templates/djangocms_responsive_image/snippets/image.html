@@ -8,7 +8,7 @@
         {% endfor %}
     "
     {% if sizes %}sizes="{{ sizes }}"{% endif %}
-    {# src="{% thumbnail instance.image default_size %}" #}
+    src="{% thumbnail instance.image default_size %}"
     {% if instance.glossary.caption %} title="{{ instance.glossary.caption }}"{% endif %}
 />
 
