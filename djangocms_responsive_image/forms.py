@@ -40,8 +40,9 @@ class ResponsiveImageForm(GlossaryFormBase):
         choices=STYLE_CHOICES)
     caption = forms.CharField(max_length=512, required=False)
     alt = forms.CharField(max_length=512, required=False)
+    description = forms.CharField(widget=forms.Textarea, required=False)
 
-    glossary_fields = ('style', 'caption', 'alt',)
+    glossary_fields = ('style', 'caption', 'alt', 'description',)
     class Meta:
         model = ImagePlugin
         fields = ('image', )
