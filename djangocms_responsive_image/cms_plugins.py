@@ -25,15 +25,20 @@ class ResponsiveImagePlugin(CMSPluginBase):
             self.TEMPLATE_NAME.format(style_name),
             self.TEMPLATE_NAME.format('default'))
         )
+        # srcset list and srcset_2x dict are separated to support legacy templates
         srcset = []
+        srcset_2x = {}
         for src in style['srcset']:
             if instance.image.width > src[0] and instance.image.height > src[1]:
                 srcset.append(src)
+                if settings.DJANGOCMS_RESPONSIVE_IMAGE_ADD_2X and instance.image.width >= src[0]*2 and instance.image.height >= src[1]*2:
+                    srcset_2x[src[0]] = (src[0]*2, src[1]*2)
             else:
                 srcset.append((instance.image.width, instance.image.height))
                 break
         context.update({
             'srcset': srcset,
+            'srcset_2x': srcset_2x,
             'sizes': style.get('sizes'),
             'default_size': style['default_size'],
             'style': style_name,

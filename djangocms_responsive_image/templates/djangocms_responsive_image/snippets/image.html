@@ -2,9 +2,13 @@
 
 <img 
     class="filer_image {{ style }} {{ classes }}"
-    alt="{% if instance.glossary.alt %}{{ instance.glossary.alt }}{% endif %}"
+    alt="{{ instance.alt }}"
     srcset="
-        {% for src in srcset %}{% thumbnail instance.image src %} {{ src.0 }}w,
+        {% for src in srcset %}
+            {% thumbnail instance.image src subject_location=instance.image.subject_location %} {{ src.0 }}w,
+        {% endfor %}
+        {% for w, src in srcset_2x.items %}
+            {% thumbnail instance.image src subject_location=instance.image.subject_location %} {{ w }}w,
         {% endfor %}
     "
     {% if sizes %}sizes="{{ sizes }}"{% endif %}

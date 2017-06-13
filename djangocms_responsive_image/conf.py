@@ -16,4 +16,5 @@ class ResponsiveImageAppConf(AppConf):
         },
     }
     IMAGE_DEFAULT_STYLE = 'default'
+    ADD_2X = True
 
