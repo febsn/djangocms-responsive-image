@@ -29,3 +29,7 @@ documentation for information on how to use it. You can also omit it if
 unnecessary.
 `default_size` will be used for the `src` attribute and the corresponding thumbnail as a fallback for browsers which don't support `srcset`.
 
+changelog
+---------
+0.1.0   added description field and alt getter with fallback to the default\_alt\_text of the image
+0.0.11  added fallback src attribute to default template
