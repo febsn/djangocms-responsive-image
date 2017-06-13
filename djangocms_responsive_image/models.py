@@ -38,7 +38,7 @@ class ImagePlugin(ImagePluginBase):
             raise ImproperlyConfigured(error_msg)
 
     def alt(self):
-        return self.glossary.get('alt', None) or self.image.default_alt_text
+        return self.glossary.get('alt', None) or self.image.default_alt_text or ''
 
     def __str__(self):
         return self.image.label
