@@ -27,9 +27,15 @@ the `srcset` img attribute and also to render the thumbnails with
 `sizes` is the value of the `sizes` img attribute, refer to your favorite html5
 documentation for information on how to use it. You can also omit it if
 unnecessary.
-`default_size` will be used for the `src` attribute and the corresponding thumbnail as a fallback for browsers which don't support `srcset`.
+`default_size` will be used for the `src` attribute and the corresponding thumbnail as a fallback for browsers which
+don't support `srcset`.
+
+By default, the srcset includes high-resolution (2x) images if the source image is large enough. You can disable
+this behaviour by setting `DJANGOCMS_RESPONSIVE_IMAGE_ADD_2X = False`. If you are using custom templates older than
+v0.1.1, you might update them to support 2x (see `templates/djangocms_responsive_image/default.html` for an example).
 
 changelog
 ---------
+0.1.1   added support for high-res images; bugfix
 0.1.0   added description field and alt getter with fallback to the default\_alt\_text of the image
 0.0.11  added fallback src attribute to default template
