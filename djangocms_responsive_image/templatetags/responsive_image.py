@@ -9,9 +9,11 @@ register = template.Library()
 
 @register.inclusion_tag("djangocms_responsive_image/snippets/image.html")
 def responsive_image(image, style_name=None, widths=None, sizes=None, default_size=None, aspect_ratio=0, alt='', classes=''):
-    if not sizes:
+    if widths:
+        widths = [int(w) for w in widths.split(',')]
+    else:
         if not style_name:
-            style_name = 'default'
+            style_name = settings.DJANGOCMS_RESPONSIVE_IMAGE_IMAGE_DEFAULT_STYLE
         style = settings.DJANGOCMS_RESPONSIVE_IMAGE_IMAGE_STYLE_CHOICES[style_name]
         widths = style.get('widths')
         aspect_ratio = style.get('aspect_ratio')

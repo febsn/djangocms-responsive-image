@@ -30,7 +30,7 @@ class ResponsiveImagePlugin(CMSPluginBase):
         context.update({
             'srcset': srcset,
             'sizes': style.get('sizes'),
-            'default_size': style['default_size'],
+            'default_size': (style['default_width'], style['default_width']*style.get('aspect_ratio')),
             'style': style_name,
             'instance': instance,
             'placeholder': placeholder

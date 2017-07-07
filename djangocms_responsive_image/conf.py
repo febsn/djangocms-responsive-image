@@ -12,7 +12,7 @@ class ResponsiveImageAppConf(AppConf):
             'name': _('default'),
             'srcset': ((300, 0), (800, 0), (1600, 0), (2000, 0)),
             'sizes': None,
-            'default_size': (1600, 0),
+            'default_width': 1600,
         },
     }
     IMAGE_DEFAULT_STYLE = 'default'
