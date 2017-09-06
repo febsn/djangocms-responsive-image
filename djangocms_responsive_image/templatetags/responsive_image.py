@@ -28,6 +28,6 @@ def responsive_image(image, style_name=None, widths=None, sizes=None, default_si
         'sizes': sizes,
         'default_size': default_size,
         'style': style_name,
-        'classes': '',
+        'classes': classes,
     }
     return context
